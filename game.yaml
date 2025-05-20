@@ -12,23 +12,8 @@ scripts:
             hint: "japan"
           play: audio/hint_japan.ogg
     - play: audio/guess.ogg
-  france:
-    - if: hint == "france"
-      then:
-        - play: audio/correct_france.ogg
-        - play: audio/info_france.ogg
-        - goto: main
-      else:
-        - play: audio/wrong_france.ogg
-  japan:
-    - if: hint == "japan"
-      then:
-        - play: audio/correct_japan.ogg
-        - play: audio/info_japan.ogg
-        - goto: main
-      else:
-        - play: audio/wrong_japan.ogg
+  test:
+   - set: 
+     play: audio/Aufzeichnung.ogg
 oids:
-  10: main       # Start game
-  11: france     # Tap on France
-  12: japan      # Tap on Japan
+  10: main
