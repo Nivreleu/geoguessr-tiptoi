@@ -1,34 +1,33 @@
 product-id: 999
 revision: 1
 comment: "GeoGuessr-style Tiptoi game"
-
 include: std.yaml
-
 scripts:
   main:
     - random:
-        - set: hint = "france"
-          - play: audio/hint_france.ogg
-        - set: hint = "japan"
-          - play: audio/hint_japan.ogg
+        - set:
+            hint: "france"
+          play: audio/hint_france.ogg
+        - set:
+            hint: "japan"
+          play: audio/hint_japan.ogg
     - play: audio/guess.ogg
-
   france:
     - if: hint == "france"
-      - play: audio/correct_france.ogg
-      - play: audio/info_france.ogg
-      - goto: main
-    - else:
-      - play: audio/wrong_france.ogg
-
+      then:
+        - play: audio/correct_france.ogg
+        - play: audio/info_france.ogg
+        - goto: main
+      else:
+        - play: audio/wrong_france.ogg
   japan:
     - if: hint == "japan"
-      - play: audio/correct_japan.ogg
-      - play: audio/info_japan.ogg
-      - goto: main
-    - else:
-      - play: audio/wrong_japan.ogg
-
+      then:
+        - play: audio/correct_japan.ogg
+        - play: audio/info_japan.ogg
+        - goto: main
+      else:
+        - play: audio/wrong_japan.ogg
 oids:
   10: main       # Start game
   11: france     # Tap on France
