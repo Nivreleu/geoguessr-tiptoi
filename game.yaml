@@ -1,11 +1,10 @@
 product-id: 999
 comment: GeoGuessr-style Tiptoi game
 init: $current_country := 0 $game_active := 0
-welcome: start_game
+welcome: welcome_message
 scripts:
 
-  start_game:
-  - P(welcome_message)
+  start_new_round:
   - $current_country := 2 # randomly selects 0 or 1
   - $current_country == 0? P(hint_france)
   - $current_country == 1? P(hint_japan)
@@ -13,13 +12,13 @@ scripts:
   - P(make_your_guess)
 
   france_guess:
-  - $game_active == 0? J(start_game)
-  - $current_country == 0? P(correct_france) J(new_round)
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 0? P(correct_france) J(start_new_round)
   - P(wrong_try_again)
 
   japan_guess:
-  - $game_active == 0? J(start_game)
-  - $current_country == 1? P(correct_japan) J(new_round)
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 1? P(correct_japan) J(start_new_round)
   - P(wrong_try_again)
 
   new_round:
