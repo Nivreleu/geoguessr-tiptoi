@@ -1,34 +1,98 @@
 product-id: 999
-comment: GeoGuessr-style Tiptoi game
+comment: GeoGuessr-style Tiptoi game with 10 countries
 init: $current_country := 0 $game_active := 0
 welcome: welcome_message
 scripts:
 
   start_new_round:
-  - $current_country := 2 # randomly selects 0 or 1
+  - $current_country := 10 # randomly selects 0-9
   - $current_country == 0? P(hint_france)
   - $current_country == 1? P(hint_japan)
+  - $current_country == 2? P(hint_germany)
+  - $current_country == 3? P(hint_italy)
+  - $current_country == 4? P(hint_spain)
+  - $current_country == 5? P(hint_brazil)
+  - $current_country == 6? P(hint_india)
+  - $current_country == 7? P(hint_australia)
+  - $current_country == 8? P(hint_egypt)
+  - $current_country == 9? P(hint_canada)
   - $game_active := 1
   - P(make_your_guess)
 
   france_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 0? P(correct_france) J(start_new_round)
+  - $current_country == 0? P(correct_france) J(new_round)
   - P(wrong_try_again)
 
   japan_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 1? P(correct_japan) J(start_new_round)
+  - $current_country == 1? P(correct_japan) J(new_round)
+  - P(wrong_try_again)
+
+  germany_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 2? P(correct_germany) J(new_round)
+  - P(wrong_try_again)
+
+  italy_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 3? P(correct_italy) J(new_round)
+  - P(wrong_try_again)
+
+  spain_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 4? P(correct_spain) J(new_round)
+  - P(wrong_try_again)
+
+  brazil_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 5? P(correct_brazil) J(new_round)
+  - P(wrong_try_again)
+
+  india_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 6? P(correct_india) J(new_round)
+  - P(wrong_try_again)
+
+  australia_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 7? P(correct_australia) J(new_round)
+  - P(wrong_try_again)
+
+  egypt_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 8? P(correct_egypt) J(new_round)
+  - P(wrong_try_again)
+
+  canada_guess:
+  - $game_active == 0? J(start_new_round)
+  - $current_country == 9? P(correct_canada) J(new_round)
   - P(wrong_try_again)
 
   new_round:
   - P(next_round)
-  - $current_country := 2 # randomly selects 0 or 1
+  - $current_country := 10 # randomly selects 0-9
   - $current_country == 0? P(hint_france)
   - $current_country == 1? P(hint_japan)
+  - $current_country == 2? P(hint_germany)
+  - $current_country == 3? P(hint_italy)
+  - $current_country == 4? P(hint_spain)
+  - $current_country == 5? P(hint_brazil)
+  - $current_country == 6? P(hint_india)
+  - $current_country == 7? P(hint_australia)
+  - $current_country == 8? P(hint_egypt)
+  - $current_country == 9? P(hint_canada)
   - $game_active := 1
   - P(make_your_guess)
 
 speak:
   9: france_guess
   10: japan_guess
+  11: germany_guess
+  12: italy_guess
+  13: spain_guess
+  14: brazil_guess
+  15: india_guess
+  16: australia_guess
+  17: egypt_guess
+  18: canada_guess
