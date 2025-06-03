@@ -10,8 +10,16 @@
 # create the images for your product.
 replay: 6348
 scriptcodes:
+  australia_guess: 6356
+  brazil_guess: 6357
+  canada_guess: 6358
+  egypt_guess: 6359
   france_guess: 6350
+  germany_guess: 6360
+  india_guess: 6361
+  italy_guess: 6362
   japan_guess: 6351
   new_round: 6352
+  spain_guess: 6363
   start_new_round: 6353
 stop: 6349

@@ -6,82 +6,82 @@ scripts:
 
   start_new_round:
   - $current_country := 10 # randomly selects 0-9
-  - $current_country == 0? P(hint_france)
-  - $current_country == 1? P(hint_japan)
-  - $current_country == 2? P(hint_germany)
-  - $current_country == 3? P(hint_italy)
-  - $current_country == 4? P(hint_spain)
-  - $current_country == 5? P(hint_brazil)
-  - $current_country == 6? P(hint_india)
-  - $current_country == 7? P(hint_australia)
-  - $current_country == 8? P(hint_egypt)
-  - $current_country == 9? P(hint_canada)
+  - $current_country == 0? P(quest_france)
+  - $current_country == 1? P(quest_japan)
+  - $current_country == 2? P(quest_germany)
+  - $current_country == 3? P(quest_italy)
+  - $current_country == 4? P(quest_spain)
+  - $current_country == 5? P(quest_brazil)
+  - $current_country == 6? P(quest_india)
+  - $current_country == 7? P(quest_australia)
+  - $current_country == 8? P(quest_egypt)
+  - $current_country == 9? P(quest_canada)
   - $game_active := 1
   - P(make_your_guess)
 
   france_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 0? P(correct_france) J(new_round)
+  - $current_country == 0? P(corr_france) J(new_round)
   - P(wrong_try_again)
 
   japan_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 1? P(correct_japan) J(new_round)
+  - $current_country == 1? P(corr_japan) J(new_round)
   - P(wrong_try_again)
 
   germany_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 2? P(correct_germany) J(new_round)
+  - $current_country == 2? P(corr_germany) J(new_round)
   - P(wrong_try_again)
 
   italy_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 3? P(correct_italy) J(new_round)
+  - $current_country == 3? P(corr_italy) J(new_round)
   - P(wrong_try_again)
 
   spain_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 4? P(correct_spain) J(new_round)
+  - $current_country == 4? P(corr_spain) J(new_round)
   - P(wrong_try_again)
 
   brazil_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 5? P(correct_brazil) J(new_round)
+  - $current_country == 5? P(corr_brazil) J(new_round)
   - P(wrong_try_again)
 
   india_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 6? P(correct_india) J(new_round)
+  - $current_country == 6? P(corr_india) J(new_round)
   - P(wrong_try_again)
 
   australia_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 7? P(correct_australia) J(new_round)
+  - $current_country == 7? P(corr_australia) J(new_round)
   - P(wrong_try_again)
 
   egypt_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 8? P(correct_egypt) J(new_round)
+  - $current_country == 8? P(corr_egypt) J(new_round)
   - P(wrong_try_again)
 
   canada_guess:
   - $game_active == 0? J(start_new_round)
-  - $current_country == 9? P(correct_canada) J(new_round)
+  - $current_country == 9? P(corr_canada) J(new_round)
   - P(wrong_try_again)
 
   new_round:
   - P(next_round)
   - $current_country := 10 # randomly selects 0-9
-  - $current_country == 0? P(hint_france)
-  - $current_country == 1? P(hint_japan)
-  - $current_country == 2? P(hint_germany)
-  - $current_country == 3? P(hint_italy)
-  - $current_country == 4? P(hint_spain)
-  - $current_country == 5? P(hint_brazil)
-  - $current_country == 6? P(hint_india)
-  - $current_country == 7? P(hint_australia)
-  - $current_country == 8? P(hint_egypt)
-  - $current_country == 9? P(hint_canada)
+  - $current_country == 0? P(quest_france)
+  - $current_country == 1? P(quest_japan)
+  - $current_country == 2? P(quest_germany)
+  - $current_country == 3? P(quest_italy)
+  - $current_country == 4? P(quest_spain)
+  - $current_country == 5? P(quest_brazil)
+  - $current_country == 6? P(quest_india)
+  - $current_country == 7? P(quest_australia)
+  - $current_country == 8? P(quest_egypt)
+  - $current_country == 9? P(quest_canada)
   - $game_active := 1
   - P(make_your_guess)
 
